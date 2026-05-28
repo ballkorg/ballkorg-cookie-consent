@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Ballkorg Cookie Consent — Banner styles
+   BEM naming: .bcc-banner, .bcc-banner--visible, .bcc-container, etc.
+   No !important — specificity managed by ID selector on root element only.
+
+   Fix applied: banner now hidden via opacity/visibility (not display:none).
+   This lets CSS transition work without setTimeout in JS.
+   ========================================================================== */
+
+#bcc-banner {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #fff;
+	background: linear-gradient( 135deg, #1a2980 0%, #26d0ce 100% );
+	box-shadow: 0 -4px 20px rgba( 0, 0, 0, 0.25 );
+
+	/* Hidden by default — JS adds .bcc-banner--visible to show. */
+	/* We use opacity + visibility instead of display:none           */
+	/* so CSS transition works immediately without setTimeout.       */
+	transform: translateY( 100% );
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	/* When hiding: first fade/slide (0.3s), then set visibility:hidden (0s, delayed). */
+	transition:
+		transform 0.3s ease-out,
+		opacity 0.3s ease-out,
+		visibility 0s linear 0.3s;
+}
+
+/* JS adds this class — banner slides up and becomes visible. */
+#bcc-banner.bcc-banner--visible {
+	transform: translateY( 0 );
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+
+	/* When showing: visibility becomes visible immediately (0s delay). */
+	transition:
+		transform 0.3s ease-out,
+		opacity 0.3s ease-out,
+		visibility 0s linear 0s;
+}
+
+.bcc-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 14px 20px;
+}
+
+.bcc-content {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.bcc-icon {
+	font-size: 22px;
+	flex-shrink: 0;
+	line-height: 1;
+}
+
+.bcc-text {
+	flex: 1;
+	min-width: 0;
+}
+
+.bcc-title {
+	margin: 0 0 4px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.bcc-description {
+	margin: 0;
+	opacity: 0.9;
+}
+
+.bcc-link {
+	color: #7dd8ff;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+.bcc-link:hover {
+	color: #fff;
+}
+
+.bcc-buttons {
+	display: flex;
+	gap: 10px;
+	flex-shrink: 0;
+}
+
+.bcc-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 42px;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 6px;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s, opacity 0.2s;
+	white-space: nowrap;
+}
+
+.bcc-btn--accept {
+	background: #27ae60;
+	color: #fff;
+}
+
+.bcc-btn--accept:hover,
+.bcc-btn--accept:focus-visible {
+	background: #219a52;
+}
+
+.bcc-btn--reject {
+	background: transparent;
+	color: #fff;
+	border: 1px solid rgba( 255, 255, 255, 0.4 );
+}
+
+.bcc-btn--reject:hover,
+.bcc-btn--reject:focus-visible {
+	background: rgba( 255, 255, 255, 0.12 );
+}
+
+.bcc-btn:focus-visible {
+	outline: 2px solid #fff;
+	outline-offset: 2px;
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+
+@media ( max-width: 640px ) {
+	.bcc-content {
+		flex-direction: column;
+		text-align: center;
+		gap: 12px;
+	}
+
+	.bcc-icon {
+		display: none;
+	}
+
+	.bcc-buttons {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.bcc-btn {
+		width: 100%;
+	}
+}
