@@ -41,3 +41,30 @@ It logs consent events to a custom database table, lazy-loads Yandex Metrika and
 
 ```bash
 wp plugin install https://github.com/ballkorg/ballkorg-cookie-consent/archive/refs/heads/main.zip --activate
+```
+
+## Screenshots
+
+### Frontend Banner (EN)
+
+![Frontend Banner EN](assets/screenshots/banner-desktop_EN.png)
+
+### Frontend Banner (RU)
+
+![Frontend Banner RU](assets/screenshots/banner-desktop_RU.png)
+
+### Mobile Banner (EN)
+
+![Mobile Banner EN](assets/screenshots/banner-mobile_EN.png)
+
+### Mobile Banner (RU)
+
+![Mobile Banner RU](assets/screenshots/banner-mobile_RU.png)
+
+### Consent Logs
+
+![Consent Logs](assets/screenshots/wpadmin-consent-logs_RU.png)
+
+### Settings
+
+![Settings](assets/screenshots/wpadmin-settings_RU.png)
