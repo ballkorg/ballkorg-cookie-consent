@@ -5,7 +5,7 @@
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)
 [![Version](https://img.shields.io/badge/version-5.1.0-green)](CHANGELOG.md)
 
-GDPR and 152-FZ compliant cookie consent banner for WordPress.
+GDPR and Russian Personal Data Law 152-FZ compliant cookie consent banner for WordPress.
 
 It logs consent events to a custom database table, lazy-loads Yandex Metrika and Google Consent Mode v2, and keeps raw IP addresses out of storage.
 
