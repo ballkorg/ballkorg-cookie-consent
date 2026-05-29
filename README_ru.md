@@ -41,3 +41,29 @@ WordPress-плагин для управления cookie-согласием в 
 
 ```bash
 wp plugin install https://github.com/ballkorg/ballkorg-cookie-consent/archive/refs/heads/main.zip --activate
+
+## Скриншоты
+
+### Cookie Banner (EN)
+
+![Frontend Banner EN](assets/screenshots/banner-desktop_EN.png)
+
+### Cookie Banner (RU)
+
+![Frontend Banner RU](assets/screenshots/banner-desktop_RU.png)
+
+### Мобильный баннер (EN)
+
+![Mobile Banner EN](assets/screenshots/banner-mobile_EN.png)
+
+### Мобильный баннер (RU)
+
+![Mobile Banner RU](assets/screenshots/banner-mobile_RU.png)
+
+### Логи согласий
+
+![Consent Logs](assets/screenshots/wpadmin-consent-logs_RU.png)
+
+### Настройки плагина
+
+![Settings](assets/screenshots/wpadmin-settings_RU.png)
