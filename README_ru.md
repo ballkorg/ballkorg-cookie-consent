@@ -41,6 +41,7 @@ WordPress-плагин для управления cookie-согласием в 
 
 ```bash
 wp plugin install https://github.com/ballkorg/ballkorg-cookie-consent/archive/refs/heads/main.zip --activate
+```
 
 ## Скриншоты
 
